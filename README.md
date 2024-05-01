@@ -13,7 +13,7 @@ Coming Up...
 - [x] User-friendly & Responsive
 - [ ] Advanced Calculator operations ---> to be added
 
-## Installation & UsAGE:
+## Installation & Usage:
 ---
 1. Clone the repository:
 ```
