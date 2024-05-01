@@ -29,7 +29,7 @@ frame1.pack(side="top", expand=True, fill="both", padx=5, pady=5)
 frame2 = ct.CTkFrame(app, fg_color="black")
 frame2.pack(side="bottom", expand=True, fill="both", padx=5, pady=5)
 
-# Entry /title/Logo)
+# Entry/title/Logo
 Image_Label = ct.CTkLabel(master=frame1,
                    text="", 
                    image=pyCalc_logo, 
@@ -99,6 +99,7 @@ def equals():
         update_All_Clear_Btn()
         expression = ""
         results = ""
+        adjust_font_size(entry)
     
     # Handle errors
     except Exception as e:
@@ -113,7 +114,6 @@ def handle_error():
     results = ""
     update_All_Clear_Btn()
     
-
 # Function ---> Toggle/Alter sign(+/-) at cursor
 def alter_sign():
     current_entry = entry.get()
@@ -140,7 +140,6 @@ def alter_sign():
             else:
                 entry.insert(index, "-")
 
-
 # Function ---> Clear Single char (C)
 def clear_single_char():
     global expression
@@ -151,6 +150,19 @@ def clear_single_char():
         entry.insert(0, new_entry)
         expression = new_entry
         update_All_Clear_Btn()
+
+# Function ---> Adjust results to fit dynamically
+def adjust_font_size(widget):
+    max_font_size = 80
+    min_font_size = 20
+    max_width = widget.winfo_width() - 20
+    text = widget.get()
+    
+    # Calculate font_size based on text len & entry width
+    font_size = max(min_font_size, min(max_font_size, int(max_width / len(text))))
+    
+    # Configure to Monstserrat
+    widget.configure(font=("Montserrat", font_size, "bold"))
 
 
 
@@ -330,7 +342,6 @@ equal_Btn = ct.CTkButton(master=frame2, text="=",
                          hover_color=mid,
                          command=equals)
 equal_Btn.grid(row=4, column=3, sticky="nswe", pady=5, padx=5)
-
 
 
 
