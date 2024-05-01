@@ -49,6 +49,9 @@ entry = ct.CTkEntry(master=frame1,
                     )
 entry.pack(expand=True, fill="both", side="bottom", pady=5, padx=5)
 
+
+
+
 # --- FUNCTIONS ---
 
 expression = ""
@@ -163,6 +166,7 @@ def adjust_font_size(widget):
     
     # Configure to Monstserrat
     widget.configure(font=("Montserrat", font_size, "bold"))
+
 
 
 
