@@ -45,6 +45,8 @@ entry = ct.CTkEntry(master=frame1,
                     height=150, 
                     fg_color="black",
                     font=monst,
+                    placeholder_text="0",
+                    placeholder_text_color="white",
                     border_color="black" 
                     )
 entry.pack(expand=True, fill="both", side="bottom", pady=5, padx=5)
@@ -85,6 +87,8 @@ def all_clear():
     entry.delete(0, ct.END)
     expression = ""
     update_All_Clear_Btn()
+    entry.configure(placeholder_text="0",
+                    placeholder_text_color="white")
 
 # Function ---> Equals
 def equals():
@@ -153,6 +157,8 @@ def clear_single_char():
         entry.insert(0, new_entry)
         expression = new_entry
         update_All_Clear_Btn()
+        entry.configure(placeholder_text="0",
+                    placeholder_text_color="white")
 
 # Function ---> Adjust results to fit dynamically
 def adjust_font_size(widget):
